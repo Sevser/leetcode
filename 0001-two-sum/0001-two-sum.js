@@ -23,3 +23,15 @@ var twoSum = function(nums, target) {
         }
     }
 };
+-----------
+function twoSum(nums: number[], target: number): number[] {
+    const mapIndexes = new Map<number, number>();
+    for(let i = 0; i < nums.length; i++) {
+        const currentNum = nums[i];
+        if (mapIndexes.has(target - currentNum)) {
+            return [mapIndexes.get(target - currentNum), i];
+        } else {
+            mapIndexes.set(currentNum, i);
+        }
+    }
+};
